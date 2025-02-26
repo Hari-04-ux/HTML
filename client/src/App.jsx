@@ -24,27 +24,13 @@ const handleSearchChange =(e) =>{
   toLowerCase().includes(searchText));
   setFilterusers(filteredUsers);
 };
-// const handleDelete =async (id)=>{
-//   const isConfirmed = window.confirm("Are you sure want to delete this user?");
-//   if(isConfirmed) {
-//     await axios.delete(`http://localhost:8000/users/${id}`).then((res)=>{
-//       setUsers(res.data);
-//       setFilterusers(res.data);
-//     });
-//   }
-//   };
 
 
 const handleDelete = async (id) => {
   const isConfirmed = window.confirm("Are you sure you want to delete this user?");
   if (isConfirmed) {
     try {
-      await axios.delete(`http://localhost:8000/users/${id}`);
-      //await axios.delete("http://localhost:8000/users/1740579403773");
-
-      //await axios.delete(`http://localhost:8000/users/${String(id)}`);
-
-      
+      await axios.delete(`http://localhost:8000/users/${id}`);      
       // Remove the deleted user from the state
       setUsers((prevUsers) => prevUsers.filter(user => user.id !== id));
       setFilterusers((prevFilterUsers) => prevFilterUsers.filter(user => user.id !== id));
