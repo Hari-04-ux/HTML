@@ -25,7 +25,8 @@ const handleSearchChange =(e) =>{
   setFilterusers(filteredUsers);
 };
 
-// Delete Users
+// Delete Users 
+//Mouly Changes
 const handleDelete = async (id) => {
   const isConfirmed = window.confirm("Are you sure you want to delete this user?");
   if (isConfirmed) {
